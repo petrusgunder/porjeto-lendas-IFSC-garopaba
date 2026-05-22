@@ -290,11 +290,61 @@
     font-size: 1.5vw;
 }
 
+.o-projeto .imagems{
+    position: relative;
+}
+
 .o-projeto .imagems img {
     width:40vw;
     margin-top: 1vw;
     margin-right: 0;
     margin-left: 0;
+}
+
+.o-projeto .imagems .cidades-no-mapa img{
+    height: 4vw;
+    width: auto;
+    position: absolute;
+}
+
+.o-projeto .imagems .cidades-no-mapa img:hover{
+    z-index: 1500;
+    height: 4.3vw;
+    width: auto;
+}
+
+#laguna{
+    top: 17vw;
+    left: 34.7vw;
+    z-index: 1000;
+}
+
+#pescaria{
+    top: 17.2vw;
+    left: 33vw;
+    z-index: 999;
+}
+
+#imarui{
+    top: 15vw;
+    left: 32vw;
+    z-index: 998;
+}
+
+#imbituba{
+    top: 14.8vw;
+    left: 35vw;
+}
+
+#garopaba{
+    top: 13vw;
+    left: 35vw;
+}
+
+#paulo-lopes{
+    top: 13vw;
+    left: 32.3vw;
+    z-index: 997;
 }
 
 .o-projeto {
