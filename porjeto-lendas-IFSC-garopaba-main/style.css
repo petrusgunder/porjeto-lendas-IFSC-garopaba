@@ -280,14 +280,26 @@
     color: rgb(0, 0, 65);
     padding: 2vw;
     width: 100%;
+    margin-bottom: 0;
 }
 
 .o-projeto .textos h1{
-    font-size: 4vw;
+    font-size: 3.3vw;
+}
+ 
+.o-projeto .textos p{
+    font-size: 1.2vw;
 }
 
-.o-projeto .textos p{
-    font-size: 1.5vw;
+.textos-referencia{
+    margin-bottom: 2vw;
+    width: 50%;
+}
+
+.textos-referencia p{
+    font-size: 0.8vw;
+    margin-left: 2vw;
+    margin-bottom: 0.3vw;
 }
 
 .o-projeto .imagems{
@@ -297,7 +309,7 @@
 .o-projeto .imagems img {
     width:40vw;
     margin-top: 1vw;
-    margin-right: 0;
+    margin-right: 5vw;
     margin-left: 0;
 }
 
