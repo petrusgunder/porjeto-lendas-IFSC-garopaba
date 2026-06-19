@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="../Lendas_Imbituba/O_SOTAO.jpg" alt="o sotao">
+
+            <audio src="o_sotao.mp3" controls>
+
+                <source>
+
+            </audio>
+
+        </div>
+
+        <div class="textoo">
+
+        <h1>A lenda do sótão</h1>
+
+        <p>Mineira de nascimento, Joana chegou em Imbituba no final dos anos 70 com o marido. Ele um engenheiro contratado pela Indústria Carboquímica Catarinense; ela uma dona de casa. Enquanto ele calculava o mundo com sequência lógica e fórmulas exatas, ela enxergava muito além do que fosse passível de cálculo. Quando chegaram no charmoso chalé que foi reservado a eles, na Rua Quintino Bocaiúva, foram avisados de que coisas estranhas aconteciam ali. Joana apenas sorriu. Nos fundos da nova casa, havia um acesso para uma passagem comum entre vários quintais, que levava de um lado ao outro do quarteirão. Também havia uma imensa área de lazer com quadra de tênis, arquibancadas e inúmeros eucaliptos frondosos que deixavam o clima mais ameno no verão. A área de lazer, embora pertencesse a apenas um dos chalés, podia ser utilizada por todos os moradores dos chalés vizinhos. Joana tomou gosto pelo lugar. Gostava de passear entre os eucaliptos. O cheiro característico da árvore produzia nela uma sensação boa de limpeza. Era assim que ia aliviar os pensamentos quando sua casa estava muito movimentada.
+
+           <br> - Dona Júlia, hoje está difícil. Parece que tem um evento no sótão. Muitos pés arrastando e um burburinho como se fosse uma reza comunitária.
+            
+            <br>Júlia era a vizinha com quem gostava de passar as tardes. Ela vivia ali há muitos anos e eram incontáveis as histórias sobre a casa que já tinha ouvido. As duas não se assustavam, apenas trocavam impressões. Um dia Joana farejou a típica fumaça de eucalipto no fundo do quintal, um pouco mais tarde do que o habitual. Zé, o jardineiro, amontoava todas as folhas de eucalipto que caíam sobre a quadra de tênis e, no final da tarde, queimava-as. Dizia que isso espantava mosquitos e limpava o ar. Ficaram conversando enquanto Zé ateava fogo nas folhas secas.
+            
+            <br>- Me perdi na hora, dona Joana. Mas não há de ser nada. Hoje o vento é leste, a fumaça vai toda pra sua casa. Fechouas janelas?
+            
+            <br>- Nossa, Zé, não fechei. Deixa eu ir lá de carreirinha fechar.
+            
+            <br>Joana saiu apressada pelo corredor de eucaliptos que levava até sua casa, olhando para o chão para não tropeçar nos galhos que quase não via por causa da fumaça. O vento leste rapidamente criou uma nuvem densa em torno das árvores e da casa de Joana. Ao se aproximar do chalé, os olhos de Joana viram o que seus ouvidos já haviam detectado horas atrás. Um longo cortejo fúnebre saía do seu sótão, flutuando em meio à fumaça. Vestidos de preto, homens e mulheres rezavam em voz baixa enquanto levavam lentamente o caixão, que ia se dissipando no céu.
+            
+            </p>
+        
+        <p class="referencia" >Material extraído do livro Contos Fantasticos 1: Fotografia por: Maria Júlia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ 

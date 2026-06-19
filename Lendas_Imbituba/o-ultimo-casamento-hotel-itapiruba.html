@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="O_último_casamento_no_hotel_de_Itapirubá.jpg" alt="a coisadefogo">
+
+            <audio src="casamento_iatapiruba.mp3" controls>
+
+                <source>
+
+            </audio>
+
+        </div>
+
+        <div class="textoo">
+
+        <h1>O último casamento no hotel Itapiruba</h1>
+
+        <p>Dario Cabral Neto foi funcionário do Hotel Itapirubá, em Imbituba, entre 1999 e 2000. “Foi apenas por três meses. Saí porque acabou o hotel”. Segundo sua descrição, já era um hotel “em desespero”, com uma crise instalando-se. Nesta época soube, através das fofocas decorrentes, de alguns casos misteriosos ocorridos no seu interior. “Algum tempo antes de minha entrada, não sei dizer quanto, contrataram o hotel para promover as bodas de um casamento”.
+
+            Dário conta que o salão nobre foi decorado com flores de várias floriculturas, iluminação revisada, vasos de cristal, moços contratados estacionando os carros. “O mais belo cenário, me diziam no relato”. Os noivos entraram dançando. Houve agradecimento, discurso da noiva e noivo, dos pais, só lágrimas de felicidade. Até que, não se sabe porque, a noiva saiu do salão como se fosse tomar um ar.
+            
+            “Cumprimentou alguns convidados ao descer a escada. O vestido ainda mais branco embaixo da noite enluarada”. A noiva então teria chegado à área de piscinas. “De repente, ouviu-se um grito, seguido de outros gritos”, conta Dário. Correram convidados, funcionários, familiares, o esposo, mas era tarde: tinha se afogado. A festa acabou abruptamente e a noiva, que antes voltaria de limusine, saiu num carro de IML.
+            
+            Dizem que com o passar do tempo, começou-se a ouvir choro, um lamento triste à borda da piscina, nas noites enluaradas. “Alguns viam a bela mulher vestida de noiva, sair ou entrar nas águas represadas da piscina”, reconta Dário. Já com o fim do hotel, gradativamente, um esqueleto à beira-mar, outro jovem já relatou tê-la visto. “Contam que foi do último andar do hotel”, diz o ex-funcionário. “Estaria ela buscando alguém para salvá-la?”.
+            
+            </p>
+        
+        <p class="referencia" > História adaptada a partir de matéria publicada no portal HC  Notícias, disponível em https://hcnoticias.com.br/geral/48765/halloween-relembre 
+lendas-urbanas-populares-de-tubarao-e-regiao, acesso em 15 de maio de 2024.  Fotografia por: Maria Júlia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+ </body>
+ 
+ 
+ </html>

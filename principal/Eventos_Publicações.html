@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang ="pt-BR">
+<head>
+    <title>projeto lendas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="eventos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="header"></div>
+    <script src="header.js"></script>
+
+    <div class="eventos">
+    
+    <br>
+
+    <p>O projeto desenvolve ações contínuas de pesquisa, ensino e extensão, promovendo a
+    circulação das narrativas populares do Sul de Santa Catarina em eventos acadêmicos,
+    culturais e educativos. </p>
+
+    <h1>PARTICIPAÇÃO EM EVENTOS</h1>
+
+    <div class = certificados>
+        <img src="../principal/eventosepublicações/eventos/participação em eventos/conectaif_certificado.jpg" width="200" alt="certificado conecta if" >
+        <img src="../principal/eventosepublicações/eventos/participação em eventos/conedu_apresentação_contos_lendas_pages-to-jpg-0001.jpg" alt="certificado conecta conedu">
+        <img src="../principal/eventosepublicações/eventos/participação em eventos/luana_salamanca2025.jpg" alt="certificado conecta salamanca">
+    </div>
+
+
+
+    <h1>MOSTRA DE CURTAS-METRAGENS E SARAU LITERÁRIO</h1>
+
+    <h1> AÇÕES FORMATIVAS E PRODUÇÕES AUDIOVISUAIS </h1>
+
+    <h1>PUBLICAÇÕES ACADÊMICAS </h1><br>
+    <p id="text"> SILVEIRA, Luana de Gusmão; WALTRIK, Thiago; GONÇALVES, Beatriz da Rosa; SILVA,  Petrus Ferreira. <strong>Lendas, contos e causos como marcas identitárias do Sul de Santa  Catarina: um mapeamento das narrativas de Laguna, Pescaria Brava e Imaruí.</strong> In:  Seminário de Ensino, Pesquisa, Extensão e Inovação (SEPEI), 2026. Resumo expandido  publicado em Anais. <br> <br>
+        
+        SILVEIRA, Luana de Gusmão. <strong> Da literatura ao cinema: narrativas populares e produção  de curtas-metragens no Ensino Médio. </strong>Texto em processo de avaliação para publicação  em periódico científico, 2026. <br> <br>
+        
+        SILVEIRA, Luana de Gusmão; WALTRIK, Thiago. <strong>Lendas, contos e causos do Sul de Santa  Catarina: a difusão do patrimônio imaterial por meio do desenvolvimento de um  repositório digital. </strong> Texto em processo de avaliação para publicação em periódico  científico, 2026. <br> <br>
+        
+        SILVEIRA, Luana de Gusmão. <strong> Lendas, contos e causos como marcas identitárias do Sul  de Santa Catarina. </strong>In: Congresso Nacional de Educação (CONEDU), 10., 2024. Resumo  publicado em Anais. ISSN: 2358-8829. <br> <br>
+        
+        SILVEIRA, Luana de Gusmão. <strong> Da literatura ao cinema: contribuições para a formação  do leitor por meio de adaptações fílmicas. </strong>Trabalho publicado nos Anais do VIII  Congresso Internacional de História, Arte e Literatura no Cinema em Espanhol e em  Português, realizado em Salamanca (Espanha), em 2025. <br> <br>
+    </p>
+
+    
+
+
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="rodape.js"></script>
+
+
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+    
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                    
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+    
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+    
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+    
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+            
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+</body>

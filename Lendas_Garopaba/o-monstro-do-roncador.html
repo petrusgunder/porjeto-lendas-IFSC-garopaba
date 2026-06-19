@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css" >
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="o-monstro-do-roncador.jpg" alt="o monstroroncador">
+
+
+            <audio src="Monstro_roncador.mp3" controls>
+
+                <source>
+
+            </audio>
+
+        </div>
+
+        <div class="textoo">
+
+        <h1>O monstro roncador</h1>
+
+        <p>Contam moradores das Areia do Macacu que alguma coisa muito forte movimenta as areias das dunas, mais nas tardes de verão quente e calmaria , produzindo um ronco assustador. Acreditam que debaixo daquelas areias vive um monstro que não gosta que andem por lá e que puxa os desavidos pra dentro da duna.
+
+            As dunas nascem do exporgo de areias pelas correntes marítimas. Areias transportadas do continente pelos rios ao oceano e com a força dos ventos são depositadas na costa. Ouvi do seu Manoel, morador da comunidade do Macacu que seus antepassados relatavam que num certo dia de calmaria, num tempo muito antigo, um curisco correu na praia do Siriú e foi crescendo na direção norte e formando um grande e assustador tornado. Cresceu tanto que alcançou o céu, misturando areia, nuvens e estrelas. Moeu tudo ao ponto de virar uma areia bem fina e brilhante. Uma simpatia de uma benzedeira amainou aquele gigante que deitou eternamente formando as dunas do Siriú.
+            
+            </p>
+        
+        <p class="referencia" >BITTENCOURT,Fernando.Entrevista concedida a Gabriel Silveiro Linck. santa Catarina, 15 out. 2024. Fotografia por: Gabriel Silveiro Linck</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    // Seleciona os elementos do DOM
+    const audioPlayer = document.getElementById('meuAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Event Listener para o botão Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.classList.add('is-playing'); // Adiciona a classe CSS para mudar o ícone
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.classList.remove('is-playing'); // Remove a classe CSS para mudar o ícone
+        }
+    });
+    
+    // Event Listener para atualizar a barra de progresso em tempo real
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+</script>
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ </html>

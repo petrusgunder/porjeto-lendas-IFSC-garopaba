@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="a_mulher_que_chora.jpg" alt="a coisadefogo">
+        </div>
+
+        <div class="textoo">
+
+        <h1>A mulher que chora</h1>
+
+        <p>Idalina
+
+A cabeça de Idalina foi encontrada no segundo dos quatro degraus da escada que dava acesso à casa simples de madeira sem tinta. Dos olhos semicerrados transbordava o acúmulo de tristezas. O vento nordeste balançava a porta da sala para frente e para trás e só o corpo mirrado estendido ali impedia que a porta se fechasse de vez foi assim que ela se percebeu, uma parte no chão da sala empapado de sangue o assoalho recém encerado; outra parte, na escada, encarando o portão da frente com olhos que já não viam. Chorou.
+
+Manuela
+
+Manuela sempre visitava sua avó aos domingos. Com o pai, a mãe e os irmãos mais velhos, pegava o trem na estação do centro de Imbituba e descia na Vila Nova, onde dona Eulália já esperava com a mesa posta. O bolo de laranja e as bananas fritas acalmavam a menina, que sempre chegava assustada. Para alcançar a casa da avó, passava pela casa onde Idalina havia sido assassinada a golpes de Machado e o irmão fazia questão de lembrá-la disso:
+
+-Tá ouvindo, Manuela? Ela tá chorando ali debaixo da bananeira. Ela vai te pegar!
+
+A menina segurava forte a mão do pai, range os dentes, baixava o olhar e seguia em frente. Quase tudo nesses passeios aos domingos agradava-a: a vista da praia da Vila, quando a Maria Fumaça passava pelo pontilhão na barrinha, os desenhos que a fumaça preta fazia no céu o apito do trem ao chegar na estação e, mais do que tudo, os quitutes deliciosos que a avó preparava para recebê-los. Mas passar pela casa do fantasma da mulher que chora era um verdadeiro tormento.
+
+-Por que o marido bateu com um machado nela? Porque ninguém fez nada? Porque ela chora só agora que já está morta? Porque o Edson fica me metendo medo com isso? As respostas nunca chegavam. Ela era criança e não podia saber de certas coisas, diziam os adultos.
+
+O tempo
+
+Com o passar dos anos a Maria Fumaça deu lugar ao ônibus Andorinha, a avó já não estava mais neste mundo e as memórias do fantasma da mulher que chora foram se esconder naquelas gavetas que o coração chaveia por falta de uso.
+
+Manuela cresceu, teve filhos, casou-se. A ordem dos fatores alterou o teor dos comentários a seu respeito. Ela segurava forte desta vez a raiva. Range os dentes como na infância já não abaixava o olhar ponto matava no peito as intromissões desagradáveis na sua vida e seguia em frente. Foi morar em outra cidade com o marido e os filhos.
+
+A vida tinha seguido tranquila como a água da Barrinha escorrendo para o mar e parecia que tudo estava em acordo. No entanto, Manuela descobriu que o cordão umbilical que a ligava a Imbituba estava enrolado e apertava no pescoço. Vez por outra ela lembrava do vento forte, do cheiro de maresia, do nascer do sol na praia do Porto, dos amigos. Voltou. Dessa vez com a família que formou por gosto era ela agora quem preparava os quitutes deliciosos. Era ela quem abrandava os choros com doces. Mas as perguntas sem respostas ainda estavam lá
+
+Manuela e Idalina
+
+Numa noite de preguiça forçada, quando o nordestão entra assobiando pelas frestas da janela e empurra para debaixo das cobertas até o imbitubense mais cascudo, Manuela assistia a um filme com o marido ponto na tela, um homem levanta o machado e num só golpe arranca a cabeça da esposa.
+
+Idalina saltou com tanta força daquela gaveta trancada nas memórias de Manuela que nem o marido ao lado escapou do assombro.
+
+-Porque ninguém fez nada? Porque ela só chorou depois de morta? Por que não me contaram a verdade?
+
+-Do que estás falando, Manuela? Que verdade? Espera o filme acabar para saber, disse o marido assustado.
+
+Manuela foi chorar no banheiro. Chorou por todas as vezes que sentiu medo na infância. Chorou por todas as violências emocionais que sofreu na juventude de mãe solteira. Chorou até cansar e foi dormir. Sonhou com Idalina.
+
+-Chore em vida, menina. Mais chore alto para todo mundo ouvir. Chore para lá do teu quintal, para lá da linha do trem. Vais ver que outras choram como tu.</p>
+        
+        <p class="referencia" >Material extraido do livro Contos Fantásticos 2. Ilustração por: Maria Julia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+</html>

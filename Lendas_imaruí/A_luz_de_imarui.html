@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A luz de Imarui</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../principal/style-lendas.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="A_luz_de_imarui.jpg" alt="a luz de imarui">
+        </div>
+
+        <div class="textoo">
+
+        <h1>A luz de Imaruí</h1>
+
+        <p>A história acontece na cidade de Imaruí, em Santa Catarina, mais precisamente no bairro Rio D’Una. Neste local morava uma família cujo provedor era João e a cuidadora do lar, Maria.
+Maria costumava visitar uma senhora de aproximadamente 70 anos, chamada Ana, que vivia sozinha em uma casa cercada por várias árvores nativas. Em uma de suas visitas rotineiras, Maria viu um clarão muito forte, uma luz que vinha de dentro da mata. Assustada, perguntou ao marido se ele também conseguia ver, mas João não enxergava nada.
+— Tá vendo aquela luz lá em cima, João?
+ — Não, Maria, não estou vendo.
+ — Olha lá, João, uma luz bem grande, uma luz em forma de bola.
+ — Não estou vendo. Isso é coisa tua, estás vendo coisa demais.
+Maria insistia que via aquela luz forte, mas nada convencia João. Frustrada, perguntou então à senhora Ana se ela conseguia enxergar o clarão entre as árvores. A idosa também não via nada, embora relatasse perceber “coisas estranhas” pela região, já que morava sozinha. O clarão, no entanto, parecia ser visível apenas para Maria.
+Com o passar do tempo, novas famílias chegaram ao bairro. Uma delas era composta por Pedro, sua esposa Marlene e a filha Camila, de aproximadamente cinco anos. Certo dia, ao passar pela mesma estradinha por onde Maria caminhava, a menina exclamou:
+— Oh, mãe, vocês estão vendo aquela luz lá?
+Seus pais responderam:
+— Não, não estamos vendo, filha.
+Assim como Maria, Camila também dizia enxergar a misteriosa “luz forte no meio do mato”. Muitos moradores acreditavam que naquela região havia ouro enterrado e que o clarão seria justamente a marca desse tesouro escondido. Tentativas de escavação foram feitas, mas nada foi encontrado. Entre dúvidas e mistérios, o fato é que essas visões atravessaram gerações, mantendo viva a crença em tesouros guardados pela natureza e segredos enterrados na cidade de Imaruí.
+</p>
+        
+        <p class="referencia" >RIBEIRO, Jucemar Ferreira. Relato oral sobre a lenda da luz no bairro Rio D’Una, Imaruí (SC). Entrevista concedida a Sabrina Duarte Rosa. Imaruí (SC), 2025. Texto adaptado.
+</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+</html>

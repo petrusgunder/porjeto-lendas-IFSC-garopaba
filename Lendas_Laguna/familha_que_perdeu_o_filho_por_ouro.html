@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang ="pt">
+<head>
+   <title>familia que perdeu o filho por ouro</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="a_crianca_de_ouro.png" alt="a coisadefogo">
+        </div>
+
+        <div class="textoo">
+
+            <h1>A Família que Perdeu a Vida por Ouro</h1>
+    <p> No Farol de Santa Marta, em Laguna, existe uma casa que carrega uma história sombria e misteriosa, marcada por tragédia, ganância e mistério. Com vista para o mar, o que hoje são apenas ruínas cheias de buracos já foi um lar repleto de vida, até que uma sucessão de acontecimentos mudou seu destino para sempre.
+	Conta-se que uma família vivia naquela casa e escondia um segredo precioso: uma grande quantidade de ouro guardada nas paredes. Durante anos, conseguiram manter o tesouro oculto, mas os rumores começaram a se espalhar pela região. Logo, homens perigosos, movidos pela cobiça, chegaram até a casa com intenções cruéis.
+Eles ameaçaram a família, exigindo a localização do ouro. A recusa em revelar o esconderijo custou caro: os criminosos tiraram a vida de todos. A casa, outrora cheia de vida, ficou marcada pelo silêncio, pela perda irrecuperável e pelo peso de um tesouro amaldiçoado.
+Por muito tempo, ninguém ousou morar ali. Até que uma nova família resolveu se instalar no local. Durante as reformas, encontrou o ouro escondido e, sem perder tempo, partiu para o Rio Grande do Sul levando consigo a fortuna. A notícia se espalhou rapidamente, e logo vizinhos e curiosos, movidos pela esperança de encontrar mais riquezas, reviraram cada canto da propriedade.
+O que resta hoje é apenas um esqueleto da antiga casa: ruínas abandonadas, cheias de buracos, testemunhas silenciosas de uma história marcada por tragédia e mistério. Ainda assim, o lugar mantém um encanto peculiar. De frente para o mar, as ruínas parecem sussurrar segredos antigos para aqueles que passam por ali.
+
+
+            
+            </p>
+        
+        <p class="referencia" >Texto adaptado de: A Família que perdeu a vida por Ouro. TikTok, 2024. Disponível em: https://vm.tiktok.com/ZMSSjCLGa/. Acesso em: 10 mai 2025.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    // Seleciona os elementos do DOM
+    const audioPlayer = document.getElementById('meuAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Event Listener para o botão Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.classList.add('is-playing'); // Adiciona a classe CSS para mudar o ícone
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.classList.remove('is-playing'); // Remove a classe CSS para mudar o ícone
+        }
+    });
+    
+    // Event Listener para atualizar a barra de progresso em tempo real
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+</script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ 

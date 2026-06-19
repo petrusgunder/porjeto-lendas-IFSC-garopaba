@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="o_papo_roxo.jpg" alt="o papo roxo">
+        </div>
+
+        <div class="textoo">
+
+        <h1>O papo roxo</h1>
+
+            <audio src="Papo-roxo.m4a" controls>
+
+                <source>
+ #petrus ta dando commmit
+            </audio>
+
+        <p>Eles chegaram de Porto Alegre cedinho. Estacionaram a Panorama verde na praia da Vila e observaram o maior swell que já tinham visto bombando entre as duas ilhas. Unce Upon a Time in The West tocava alto no rádio e eles acenderam um beck para comemorar a viagem tranquila e as ondas grandes.
+
+           <br> — Bah, Vitinho. Vai inaugurar a gunzeira em grande estilo, meu brother.
+            
+            <br>— Pode crer, Marcelo. Descer essas morras vai ser meu segundo presente de aniversário.
+            
+            <br>— Cara, não sei se vou entrar nesse pico com a minha 6 pés.
+            
+            <br>— Vai amarelar, Sérgio? — Zombaram os dois amigos.
+            
+            <br>Passaram parafina nas pranchas, vestiram suas roupas de borracha e entraram nas águas geladas da vila pelo canal. As cabras na Ilha Santana de dentro observacam em silêncio a ousadia dos surfistas que se arriscavam naquele mar. Alguns nativos no pico olhar um ar pouco amistoso para os gaúchos. Uma hora de surf depois e os três amigos resolveram ir para o Hotel Imbituba deixar as coisas e procurar um lugar para comer.
+            
+            <br>— Tu já ficasse neste hotel antes, Vitor? — Perguntou Sérgio.
+            
+            <br>— Não, mas um amigo de Garopaba disse que é bom e não muito caro.
+            
+            <br>— Cara, me arrepiei todo só de olhar essas janelas. Sei lá.
+            
+            <br>— Bah, Serginho. Tu sempre com essas manias. Tu tá é com fome. — Disse Vitor.
+            
+            <br>— Vocês precisam ver o bar do hotel rapaziada. Até piano tem. Coisa fina, observou Marcelo.
+            
+            <br>Os três amigos ficaram hospedados na ala norte, com as janelas e a varanda de frente para a rua Quintino Bocaiúva. No início da noite, saíram atrás de diversão. Foram beber algo no restaurante Carvão, point badalado da cidade e que, naquela sexta-feira, reunia surfistas contando suas manobras radicais no mar clássico daquele dia, estudantes que haviam matado a aula no Colégio Annes Gualberto, alguns conhecidos botequeiros da região, música boa e muita gente bonita. Depois de beber, comer e trocar ideias, os amigos resolveram voltar para o hotel. O dia seguinte prometia altas ondas e eles pretendiam acordar cedo para aproveitar ao máximo o final de semana na praia.
+            
+            <br>— Cara, não estou com sono, disse Sérgio. Vou ficar um pouco na varanda.
+            
+            <br>— Segura a fumaça, Brother. Essa varanda fica de frente para rua, disse Vitor.
+            
+            <br>— Deixa o cara relaxar, Vitor. Assim ele ronca menos. — Riu Marcelo.
+            
+            <br>Sérgio ficou observando as estrelas e ouvindo o som das ondas do mar ao longe. Um vento nordeste começou a super mais forte e ele teve a impressão de ouvir o som de cascos de cavalo aproximando-se olhou ao redor, mas nenhum cavalo passou pela rua. Cansado, entrou no quarto e foi dormir. Acordou com o som dos cascos do cavalo, e foi até a varanda. Marcelo acordou com a movimentação do amigo.
+            
+            <br>— O que foi, Sérgio?
+            
+            <br>— Eu ouço som de cavalo por aqui, mas não vejo nenhum. Cheguei a acordar com o barulho.
+            
+            <br>— Que cavalo, meu irmão? Vá dormir.
+            
+            <br>Quem acordou com o som dos cascos do cavalo dessa vez foi Marcelo. Olhou para sérgio que estava acordado em silêncio. Os dois levantaram devagar e abriram a porta do quarto que dava acesso ao corredor do hotel. Parado na frente da porta do quarto estava um belo animal marrom de crinas longas e porte altivo. Montado sobre a sela, um soldado com uniforme de cor caqui e botas de montaria. Na cintura, um grosso cinto de couro sustentado ainda por duas alças de um suspensório. Um sabre pendia do lado esquerdo do cinto. A gola roxa da camisa que usava pro baixo envolvia todo o pescoço. O homem sorriu, olhou para Sérgio, Marcelo e para Vitor, que sentado na cama tentava entender o que acontecia. A um comando do soldado papo-roxo, o cavalo ergueu as patas dianteiras, relinchou e disparou pelo corredor do hotel até desaparecer pela parede.
+            
+            </p>
+        
+        <p class="referencia" >material extraido do livro Contos fantásticos 1. Ilustração por: Maria Julia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ </html>
+ 
+ 

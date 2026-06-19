@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang ="pt-BR">
+<head>
+    <title>projeto lendas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style-sobre.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="header"></div>
+    <script src="header.js"></script>
+
+    <div class="sobre">
+
+        <h1>O PROJETO DE PESQUISA</h1>
+
+        <p> O projeto Lendas, contos e causos como marcas identitárias do Sul de Santa Catarina
+        investiga narrativas folclóricas que compõem a cultura popular da região sul
+        catarinense. Por meio do estudo dessas narrativas, a pesquisa busca sistematizar
+        histórias orais que se caracterizam como patrimônio imaterial, contribuindo para a
+        preservação da memória e da identidade das comunidades locais.</p>
+
+        <br>
+
+        <p> Em sua primeira edição (2023-2024), o projeto mapeou narrativas dos municípios de
+        Garopaba, Imbituba e Paulo Lopes. Na segunda etapa (2025-2026), amplia o estudo
+        para Laguna, Pescaria Brava e Imaruí.</p>
+
+        <br>
+
+        <p>O corpus da investigação é constituído por levantamento bibliográfico, pesquisa de
+        campo com moradores locais e sistematização das narrativas neste site voltado à
+        difusão das histórias coletadas.</p>
+        
+                            
+
+            <h1>O PROJETO DE ENSINO</h1>
+            <p>A pesquisa está vinculada ao projeto de ensino Nossos contos, nossas lendas: um
+            diálogo entre cinema e literatura, desenvolvido no Instituto Federal de Santa Catarina
+            (IFSC) – Câmpus Garopaba, desde 2024. </p>
+
+            <br>
+
+            <p>O projeto de ensino promove práticas pedagógicas voltadas à leitura, à escrita e à
+            produção audiovisual, envolvendo estudantes dos cursos técnicos integrados e do
+            curso Técnico em Guia de Turismo na criação de curtas-metragens inspirados em
+            narrativas populares do Sul de Santa Catarina. </p>
+
+            <br>
+
+            <p>As ações articulam literatura, cultura popular, cinema e tecnologia, aproximando os
+            estudantes de experiências de investigação, criação audiovisual e valorização da
+            memória cultural da região. </p>
+
+            
+
+
+            <h1>ENSINO, PESQUISA E EXTENSÃO</h1>
+            
+            <p>As ações desenvolvidas buscam fortalecer a indissociabilidade entre ensino, pesquisa
+            e extensão no contexto da Educação Profissional e Tecnológica, promovendo
+            experiências formativas ligadas à leitura, à escrita, à oralidade e ao audiovisual.</p>
+
+            <br>
+
+            <p>Parte-se da premissa de que o folclore, como manifestação cultural, constitui
+            importantes marcas identitárias de um povo e pode contribuir significativamente para
+            preservar a memória dos territórios.</p>
+
+
+            <h1>EDITAIS DE FOMENTO</h1>
+            <p>A primeira edição do projeto de pesquisa foi executada com recursos do Edital no
+            04/2024/DIREN-PROEN-IFSC, por meio da pesquisa intitulada Lendas, contos e causos
+            como marcas identitárias do Sul de Santa Catarina.</p>
+
+            <br>
+
+            <p>A segunda edição é desenvolvida com recursos do Edital no 01/2025/DIREN-PROEN-
+            IFSC, com a pesquisa Lendas, contos e causos como marcas identitárias do Sul de Santa
+            Catarina: um mapeamento das narrativas de Laguna, Pescaria Brava e Imaruí.</p>
+            
+            <br>
+
+            <p>O projeto de ensino Nossos contos, nossas lendas: um diálogo entre cinema e literatura (1a e 2a edição) também foi contemplado pelos editais:</p>
+
+            <br>
+
+            <p>Edital no 04/2024/DIREN-PROEN-IFSC – Apoio a Programas e Projetos de Ensino; </p>
+
+            <br>
+
+            <p> Edital no 01/2025/DIREN-PROEN-IFSC – Apoio a Projetos de Ensino. </p>
+
+            
+
+
+            <h1>CONTINUIDADE DAS AÇÕES</h1>
+
+            <p>Desde 2024, o projeto vem desenvolvendo ações contínuas de pesquisa, ensino e
+            produção audiovisual voltadas ao mapeamento, à sistematização e à difusão de
+            narrativas populares do Sul de Santa Catarina. </p>
+
+            <br>
+
+            <p>As atividades articulam memória, oralidade, literatura, audiovisual e cultura popular,
+            envolvendo estudantes e comunidades locais em processos de investigação e
+            valorização do patrimônio cultural imaterial da região. <p>
+
+            <br>
+
+            <p>Além da ampliação do site e da continuidade do mapeamento das narrativas, o projeto
+            prevê o desenvolvimento de novas ações formativas, produções audiovisuais,
+            pesquisas de campo e iniciativas voltadas à preservação das memórias e identidades
+            culturais das comunidades do litoral sul catarinense. <p>
+
+            
+            <h1>ASPECTOS ÉTICOS</h1>
+
+
+            <p>A pesquisa foi submetida e aprovada pelo Comitê de Ética em Pesquisa, sob CAEE no
+            95367325.4.0000.0185 e parecer no 8.251.430, atendendo às diretrizes éticas para
+            pesquisas envolvendo participantes humanos.<br> <br> <br> <br></p>
+
+            
+    </div>
+    <div id="footer"></div>
+    <script src="rodape.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+    
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                    
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+    
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+    
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+    
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+            
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+</body>
+
+</html>

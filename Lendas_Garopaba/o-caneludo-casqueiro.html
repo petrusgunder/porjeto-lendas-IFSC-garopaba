@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="caneludo_casqueiro.jpg" alt="o caneludo">
+        </div>
+
+        <div class="textoo">
+
+        <h1>O Caneludo do Casqueiro</h1>
+
+        <p>Quando chegaram em Garopaba, os açorianos se depararam com os sambaquis, distribuídos ao longo da costa catarinense. Tratados pelos locais como “casquieros”, devido a grande quantidade de cascas de mariscos deixadas pelo Homem do Sambaqui e posteriormente pelos índios Carijó. Junto aos “casqueiros” encontram-se sepulturas rasas e vestígios de uma civilização já extinta. Desde os primeiros viajantes que aqui chegaram se depararam com esta cultura que andavam nus pela costa. As informações e relatos foram repassados como um povo diferente que desenterravam seus mortos e acondicionavam o esqueleto em panelas de barro, além dos “estranhos” rituais religiosos.
+
+            Esses relatos deram a impressão que estes primitivos, que andavam pelos costões eram seres assustadores e misteriosos. Passando a referencial de símbolos no cotidiano popular. Educar as crianças através do medo (respeito) aos perigos e impedimentos inexplicáveis pelos mais velhos era a prática. Impedir que as crianças brincassem nos costões ou acompanhassem os pescadores lhes eram lembrados da presença do “Caneludo do Casqueiro”. Com o passar do tempo toda e qualquer desobediência ou falta de respeito aos mais velhos as crianças eram ameaçadas com a vinda do “Caneludo do Casqueiro”.
+            
+            </p>
+        
+        <p class="referencia" >BITTENCOURT,Fernando. Entrevista concedida a Gabriel Silveiro Linck. Santa Catarina, 15 out.2024.</p>
+        
+    </div>
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+    <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="as_gemeas_de_paulo_lopes.jpg" alt="as_gemeas_de_pauloLopes">
+        </div>
+
+        <div class="textoo">
+
+        <h1>As gêmeas de Paulo Lopes</h1>
+
+        <p>Segundo os locais, em 1956, na localidade de Cova Triste, as gêmeas Serafina e Luzia morreram afogadas durante um banho de cachoeira. Tudo começou com uma peste, que afetou um dos bois da família. Como eram muito pobres, não tinham outra opção além de matá-lo e aproveitar o máximo que podiam do animal. Logo, o pai das gêmeas matou o boi, e foram juntos salgar a carne próximos da cachoeira. As meninas, ansiosas, já avisaram que ao terminarem tal atividade, iriam nadar na cachoeira. O pai delas não tardou em alertá-las dos perigos daquelas correntezas, negando o desejo das duas de mergulhar ali. Assim que a carne foi salgada, o pai retornou para a casa, e as irmãs, contra o pedido do pai, foram nadar na cachoeira. Junto delas, estavam presentes sua tia e seu primo, Deca. Porém, Luzia, pouco tempo depois de adentrar as águas começou a se afogar por conta da correnteza, e assim, Deca e Serafina, desesperados, entraram na água para ajudar. A tia, compartilhando do desespero, gritava por ajuda, sem saber o que fazer. O esforço de Deca e Serafina para ajudar Luzia não era suficiente, e os três começaram a ser puxados pela correnteza. Deca conseguiu escapar, porém as gêmeas não tiveram essa sorte, se afogando ali. Pouco tempo depois, com a ajuda de outras pessoas, seus corpos foram retirados, mas já sem vida.
+
+        </p>
+        
+        <p class="referencia" > GONÇALVES, Maria Izabel. Revelando os Brasis. Disponivel em: <a href="https://www.revelandoosbraisis.com.br/videos/as-gemeas-de-paulo-lopes/">https://www.revelandoosbraisis.com.br/videos/as-gemeas-de-paulo-lopes/</a> Acesso em: 10 set. 2024. ilustração por: Maria Júlia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ 

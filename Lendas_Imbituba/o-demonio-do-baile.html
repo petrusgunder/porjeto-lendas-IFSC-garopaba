@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <title>projeto lendas</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="demonio_baile_de_quaresma.png" alt="demonio na quaresma">
+
+            <audio src="Demonio_baile_quaresma.mp3" controls>
+
+                <source>
+
+            </audio>
+
+        </div>
+
+        <div class="textoo">
+
+        <h1>O demônio do baile de Quaresma</h1>
+
+        <p>É contado que há algumas décadas, o período que antecede a Páscoa – chamado de Quaresma – era seguido à risca pelos católicos em geral. A Igreja pedia que não fizessem festas nem casamentos, porém um conhecido clube de Imbituba, hoje permanentemente fechado, resolveu não acatar a tradição.
+
+            Era uma noite de lua cheia, quando num desses bailes – realizado apesar das críticas dos padres – apareceu um rapaz bonito e desconhecido. Moço de atitude e com chapéu elegante, ele tirou algumas mulheres para dançar, deu voltas pelo salão, mas repararam numa estranheza: ao olharem seus pés, viram que canelas de bode entravam-lhe os sapatos.
+            
+            Segundo a lenda, ao ser percebido, o moço logo adentrou no banheiro e retirou as calças, revelando as pernas de bode e dois chifres abaixo do chapéu. Quando foram atrás, no banheiro, já tinha desaparecido. Só restou um forte odor de enxofre por todo o ambiente.
+            
+            </p>
+        
+        <p class="referencia" >Material extraido de ALEXANDRE,Eduardo.calafrio real. Disponivel em:https://calafrioreal.blogspot.com/2015/04/especial-quaresma-o-dia-que-o-diabo.html?m=1 Acesso em: 05 set 2024</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    // Seleciona os elementos do DOM
+    const audioPlayer = document.getElementById('meuAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Event Listener para o botão Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.classList.add('is-playing'); // Adiciona a classe CSS para mudar o ícone
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.classList.remove('is-playing'); // Remove a classe CSS para mudar o ícone
+        }
+    });
+    
+    // Event Listener para atualizar a barra de progresso em tempo real
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+</script>
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ </html>

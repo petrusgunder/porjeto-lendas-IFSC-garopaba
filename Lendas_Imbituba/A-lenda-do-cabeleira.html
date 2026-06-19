@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <title>projeto lendas</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="textoo">
+    
+    <div class="texto">
+        <div class="imagem">
+            <img src="cabeleira_foto.jpeg" alt="o cabeleira">
+        </div>
+
+        <div class="textoo">
+
+        <h1>A lenda do cabeleira</h1>
+
+        <p>A Lenda Do Cabeleira
+            No penhasco da enseada de Imbituba, no chamado Costão da Ribanceira, próximo do local onde está a carcaça do navio Siderúrgica Oito, existe uma tenebrosa lapa a que os antigos moradores davam o nome de “Buraco da Cobra”. Ali - segundo diziam - se aninhava uma horrível e enorme serpente, dotada de farta cabeleira. À noite - contavam os antigos - a misteriosa serpente saía de sua “toca” e fazia grandes estragos nas plantações e nas criações da redondeza. No ano de 1796, quando havia ali próximo a primeira Armação da Beleia, existia um homem negro, empregado na Armação, que pouco conversava com os colegas de pescaria e nunca disse de onde veio e nem com quem morava. Era um homem misterioso. Contam os moradores da época que aos domingos e dias santos o misterioso negro penetrava naquela furna e ali passava as horas penteando e fazendo tranças na vasta cabeleira da serpente - um apavorante monstro. Alguns o chamavam de feiticeiro. Outros alegavam que o preto tinha partes com o demônio, transformado naquela horrenda e temível cobra.
+            
+            Um belo dia, o negro não compareceu ao trabalho, nas pescas da baleia. Passaram-se os dias e como não aparecesse foram procurá-lo na tenebrosa furna. Constataram que o negro e a serpente haviam abandonado o local sem deixar o mínimo vestígio.
+            
+</p>
+        
+        <p class="referencia" >Material extraído do livro Contos Fantásticos 2. Fotografia por: Maria Júlia Esteves da Costa.</p>
+        
+    </div>
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+ </body>
+ 
+ <script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+ 
+ </html>

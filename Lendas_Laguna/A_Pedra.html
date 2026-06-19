@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang ="pt">
+<head>
+   <title>A pedra do cochicho</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="A_pedra_do_cochicho.jpg" alt="a coisadefogo">
+        </div>
+
+        <div class="textoo">
+
+            <h1> A pedra do cochicho </h1>
+    <p> Contada há muitos anos na comunidade de Ribeirão Grande, esta história trata de uma pedra à beira da cachoeira num lugar chamado Fundão. No verão, muitos tomam banho próximo a esta pedra. Hoje existem algumas versões, entre elas, escolhemos duas: "Certa vez uma mulher teve um filho, mas após o seu nascimento, ao amanhecer, ele morreu. Então sua mãe o enterrou debaixo de uma pedra no Fundão. Durante muito tempo ouviu-se o choro daquele bebê vindo de dentro da pedra. Por isso pedra do cochicho, pois lembra o choro de um recém-nascido". (sic)  
+Outra                     	     Outra versão: "Uma mulher do Ribeirão Grande escondeu um colar de ouro no formato de um coração embaixo de uma pedra na cachoeira conhecida como Fundão. À noite dizem que a alma desta senhora, falecida, vai pra cima da pedra falar sozinha. Ela fala muito baixo, por isso diz-se que ela cochicha. Conta-se que só a bisneta dessa senhora poderia tirar o colar tão cobiçado, porém, ela também já faleceu. Quem tenta pegar o colar é puxado pelo pé até o fundo, onde lá a mulher os afoga, segundo a lenda” (sic)
+</p>
+        
+        <p class="referencia" >OLIVEIRA, Laércio Vitorino de Jesus (Org.). Memória: um patrimônio irrenunciável: comunidades do distrito de Ribeirão Pequeno da Laguna. Palhoça: Editora Unisul, 2010.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    // Seleciona os elementos do DOM
+    const audioPlayer = document.getElementById('meuAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Event Listener para o botão Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.classList.add('is-playing'); // Adiciona a classe CSS para mudar o ícone
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.classList.remove('is-playing'); // Remove a classe CSS para mudar o ícone
+        }
+    });
+    
+    // Event Listener para atualizar a barra de progresso em tempo real
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+</script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ 

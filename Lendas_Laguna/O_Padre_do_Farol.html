@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../principal/style-lendas.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A Lenda do Padre do Farol</title>
+     <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+     <div class="texto">
+        <div class="imagem">
+            <img src="padre-do-farol.jpg" alt = "A lenda do Padre do Farol" width="700" height="1000">
+        </div>
+
+        >
+
+        <div class="textoo">
+
+        <h1> A Lenda do Padre do Farol </h1>
+        
+            <audio src="A_lenda_do_padre_do_farol.m4a" controls>
+
+                        <source>
+
+            </audio>
+
+        <p>Em 1954, um trágico episódio marcou a história do Cabo de Santa Marta, em Laguna. Naquele ano, um padre e três amigos reuniram-se diante do mar, sobre uma grande pedra à beira do penhasco, apenas para conversar e contemplar o oceano. Porém, a natureza, sempre imprevisível, transformou aquela tarde em tragédia. Uma onda violenta surgiu de repente e arrastou os quatro homens para as águas agitadas.
+Apesar da luta desesperada, apenas os três amigos conseguiram se salvar. O padre, vencido pela força das correntes, desapareceu no mar gelado, deixando a comunidade local mergulhada em profunda tristeza. Em sua memória, ergueu-se um monumento no mesmo ponto em que a tragédia aconteceu, como lembrança de sua vida e de sua partida repentina.
+Com o passar do tempo, porém, a dor deu lugar ao mistério. Muitos moradores e visitantes afirmam ter visto a figura do padre caminhando pelo local, especialmente próximo ao farol. Diferente de outras aparições que inspiram medo, sua presença é descrita como tranquila, quase protetora, como se o espírito tivesse permanecido ali para guardar o farol e proteger aqueles que se aproximam do mar traiçoeiro.
+Assim nasceu a lenda do Padre do Farol, que até hoje ressoa entre as ondas e pedras do Cabo de Santa Marta, misturando história, fé e mistério.</p>
+        
+        <p class="referencia" > Material adaptado de vídeo publicado no TikTok disponível em: https://www.tiktok.com/@cyborg.yt_/video/7465378411637132550 , acesso em 10
+        de maio de 2025.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+ 
+</body>
+</html>

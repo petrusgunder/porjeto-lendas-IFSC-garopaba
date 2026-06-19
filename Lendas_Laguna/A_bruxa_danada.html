@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang ="pt">
+<head>
+   <title>A bruxa danada</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="../principal/style-lendas.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="headerlendas"></div>
+    <script src="../principal/headerlendas.js"></script>
+
+    <div class="texto">
+        <div class="imagem">
+            <img src="A_bruxa_danada.jpg" alt="a coisadefogo">
+        </div>
+
+        <div class="textoo">
+
+            <h1>A bruxa danada </h1>
+    <p> Quem nos escreveu esta história foi dona Délcia, da Madre: "Minha mãe quem contava para nós. Em um certo lugar, morava uma família que tinha um filho jovem, aos seus 17 anos, cheio de vida, um belo rapaz. E aos poucos ele foi ficando doente. Toda sexta-feira ele amanhecia abatido, cansado, sem forças para levantar, ele falava a seus pais que à noite, depois da meia-noite, descia uma coisa estranha em direção a seu peito e apertava seu pescoço. E foram se passando o tempo e o moço cada vez mais magro e debilitado. Um certo dia, sua mãe falou: nós vamos te levar até a casa de sua avó, ela sabe tantos remédios e é uma forte curandeira, vamos lá. Com grande custo levaram o moço. Chegando lá, a sua avó fez uns negócios de bruxaria, foi em direção a sua mãe e falou: Meu neto está sendo atacado pelas bruxas, vou ensinar uns truques e ele vai ficar melhor. Toda sexta-feira, após a meia-noite, vocês põem uma faca de ponta sobre seu peito, e em cima do cabo da faca põem um copo com água e ele fica segurando.   Chegando a sexta-feira fizeram o tal remédio, mas em vez de colocar a faca de ponta sobre o peito do rapaz, eles colocaram ao contrário. Puseram o prato de água sobre o peito, e faca de cabo no prato, de ponta para cima. Passou a meia-noite, e de repente, ‘plufit’, do telhado despencou o que maltratava o moço. Seus pais acordaram com o grito. O pai falou: ‘Mas o que é isto? São os gritos de minha mãe’, respondeu o moço assustado. Foram olhar e sabem quem estava lá? Era sua avó. A bruxa espetada na faca. Ela queria matar o próprio neto e foi ao contrário. Esta velha danada vai ser bruxa lá pra longe!". (sic) 
+
+            </p>
+        
+        <p class="referencia" >OLIVEIRA, Laércio Vitorino de Jesus (Org.). Memória: um patrimônio irrenunciável: comunidades do distrito de Ribeirão Pequeno da Laguna. Palhoça: Editora Unisul, 2010.</p>
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../principal/rodape.js"></script>
+ 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            function setupDropdown(menuSelector, droopSelector) {
+                const menu = document.querySelector(menuSelector);
+                const droop = menu.querySelector(droopSelector);
+                const link = menu.querySelector('.opcoes'); // O link que será clicável
+   
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o link de navegar
+                   
+                    // Fecha todos os outros dropdowns
+                    document.querySelectorAll('.droop.show').forEach(otherDroop => {
+                        if (otherDroop !== droop) {
+                            otherDroop.classList.remove('show');
+                        }
+                    });
+   
+                    // Alterna a classe 'show' no dropdown clicado
+                    droop.classList.toggle('show');
+                });
+   
+                // Fecha o dropdown se o usuário clicar fora dele
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target) && droop.classList.contains('show')) {
+                        droop.classList.remove('show');
+                    }
+                });
+            }
+   
+            // Aplica a funcionalidade para Lendas
+            setupDropdown('.menu-das-lendas', '.droop');
+           
+            // Aplica a funcionalidade para Curtas
+            setupDropdown('.menu-curtas', '.droop');
+        });
+    </script>
+
+<script>
+    // Seleciona os elementos do DOM
+    const audioPlayer = document.getElementById('meuAudio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Event Listener para o botão Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.classList.add('is-playing'); // Adiciona a classe CSS para mudar o ícone
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.classList.remove('is-playing'); // Remove a classe CSS para mudar o ícone
+        }
+    });
+    
+    // Event Listener para atualizar a barra de progresso em tempo real
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+</script>
+
+
+<script>
+    function FiltrarCidade(cidade) {
+    const cards = document.querySelectorAll('.card-lenda');
+
+    cards.forEach(card => {
+        if (cidade === 'Todos') {
+            card.classList.add('apresentar');
+        } else {
+            if (card.dataset.cidade === cidade) {
+                card.classList.add('apresentar');
+            } else {
+                card.classList.remove('apresentar');
+            }
+        }
+    });
+}
+
+FiltrarCidade('Todos');
+</script>
+
+ </body>
+ 
+ 
+ 
