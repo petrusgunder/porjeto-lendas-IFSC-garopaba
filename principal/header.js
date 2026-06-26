@@ -96,7 +96,7 @@ document.getElementById('header').innerHTML = `
 
                                     <div class="card-lenda" data-cidade="Imbituba">
                                         <div class="A lenda do cabeleira">
-                                            <img src="../Lendas_Imbituba/a_lenda_do_cabeleira.jpg" alt="A lenda do cabeleira">
+                                            <img src="../Lendas_Imbituba/cabeleira_foto.jpeg" alt="A lenda do cabeleira">
                                             <span class="texto-sobreposto"><a href="../Lendas_Imbituba/A-lenda-do-cabeleira.html" class="link-lendas"> A LENDA DO CABELEIRA </a></span>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@ document.getElementById('header').innerHTML = `
 
                                     <div class="card-lenda" data-cidade="Imbituba">
                                         <div class="O último casamento no Hotel de Itapirubá">
-                                            <img src="../Lendas_Imbituba/o_ultimo_casamento_no_hotel_de_itapiruba.png" alt="O último casamento no Hotel de Itapirubá">
+                                            <img src="../Lendas_Imbituba/O_último_casamento_no_hotel_de_Itapirubá.jpg" alt="O último casamento no Hotel de Itapirubá">
                                             <span class="texto-sobreposto"><a href="../Lendas_Imbituba/o-ultimo-casamento-hotel-itapiruba.html" class="link-lendas"> O ÚLTIMO CASAMENTO NO HOTEL ITAPIRUBÁ </a></span>
                                         </div>
                                     </div>
