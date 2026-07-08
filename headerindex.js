@@ -84,7 +84,7 @@ document.getElementById("headerindex").innerHTML = `
 
                                     <div class="card-lenda" data-cidade="Laguna">
                                         <div class="A crianca de ouro">
-                                            <img src="Lendas_Laguna/a_crianca_de_ouro.png" alt="familia que perdeu a vida por ouro" 
+                                            <img src="Lendas_Laguna/a_crianca_de_ouro.png" alt="familia que perdeu a vida por ouro">
                                             <span class="texto-sobreposto"><a href="Lendas_Laguna/familha_que_perdeu_o_filho_por_ouro.html" class="link-lendas">A FAMÍLIA QUE PERDEU A VIDA POR OURO  </a> </span>
                                         </div>
                                     </div>
@@ -246,7 +246,7 @@ document.getElementById("headerindex").innerHTML = `
 
                                     <div class="card-lenda" data-cidade="Imbituba">
                                         <div class="O último casamento no Hotel de Itapirubá">
-                                            <img src="Lendas_Imbituba/cabeleira_foto.jpeg" alt="O último casamento no Hotel de Itapirubá">
+                                            <img src="Lendas_Imbituba/O_último_casamento_no_hotel_de_Itapirubá.jpg" alt="O último casamento no Hotel de Itapirubá">
                                             <span class="texto-sobreposto"><a href="Lendas_Imbituba/o-ultimo-casamento-hotel-itapiruba.html" class="link-lendas"> O ÚLTIMO CASAMENTO NO HOTEL ITAPIRUBÁ </a></span>
                                         </div>
                                     </div>
